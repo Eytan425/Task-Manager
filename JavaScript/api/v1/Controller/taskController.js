@@ -25,7 +25,7 @@ const createTask = async (req, res) => {
   
   const getTasks = async (req, res) => {
     try {
-        const tasks = await Task.find({ userId, completed: false }).select('title description dueDate completed reminderDate'); // Specify fields to include
+        const tasks = await Task.find({completed: false }).select('title description dueDate completed reminderDate'); // Specify fields to include
   
       res.status(200).json(tasks); // Send a success response with all tasks
     } catch (error) {
