@@ -20,6 +20,9 @@ router.delete('/deleteAll', taskController.deleteAllTasks);
 //Search for a task
 router.get('/search', taskController.searchTasks);
 
+//Show hidden tasks
+router.get('/hidden', taskController.showHidden);
+
 module.exports = router;
 
 

@@ -103,7 +103,17 @@ const createTask = async (req, res) => {
       res.status(500).json({ message: 'Error searching tasks' });
     }
   };
-  
+  const showHidden = async (req, res) =>
+  {
+    try{
+      const tasks = await Task.find({completed:true}).select('title description dueDate completed reminderDate');
+      res.status(200).json(tasks);
+    }catch(error)
+    {
+      console.error(error);
+      res.status(500).json({message: "Couldn't show hidden tasks"})
+    };
+  }
 
 // Other functions for updating and deleting tasks
 
@@ -114,5 +124,6 @@ module.exports = {
   deleteTask,
   deleteAllTasks,
   searchTasks,
+  showHidden,
   // Other exported functions
 };
