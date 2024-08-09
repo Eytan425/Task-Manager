@@ -36,7 +36,7 @@ const createTask = async (req, res) => {
 
   const updateTask = async (req, res) => {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const updatedTask = req.body;
   
       const task = await Task.findByIdAndUpdate(id, updatedTask, { new: true });
@@ -55,7 +55,7 @@ const createTask = async (req, res) => {
   
   const deleteTask = async (req, res) => {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
   
       const deletedTask = await Task.findByIdAndDelete(id);
   

@@ -9,10 +9,10 @@ router.post('/create', taskController.createTask);
 router.get('/get', taskController.getTasks);
 
 // Update a task
-router.put('/update/:id', taskController.updateTask);
+router.put('/update', taskController.updateTask);
 
 // Delete a task
-router.delete('/delete/:id', taskController.deleteTask);
+router.delete('/delete', taskController.deleteTask);
 
 // Delete all tasks
 router.delete('/deleteAll', taskController.deleteAllTasks);
